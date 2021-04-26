@@ -119,7 +119,7 @@ function formatDate(timestamp) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
     celsiusLink.classList.add("active");
-    let celsiusTemperature = (temperatureElement.innerHTML - 32)*5)/9;
+    let celsiusTemperature = (temperatureElement.innerHTML - 32) * 5/9;
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
   }
 
