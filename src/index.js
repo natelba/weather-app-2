@@ -118,7 +118,8 @@ function formatDate(timestamp) {
   function displayCelsiusTemperature(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
-    let celsiusTemperature = (fahrenheitTemperature.innerHTML - 32)*(0.5556);
+    celsiusLink.classList.add("active");
+    let celsiusTemperature = (fahrenheitTemperature.innerHTML - 32)* 0.5556;
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
   }
 
