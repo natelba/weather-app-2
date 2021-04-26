@@ -121,7 +121,7 @@ function formatDate(timestamp) {
     celsiusLink.classList.add("active");
     fahrenheitLink.classList.remove("active");
 
-    let celsiusTemperature = (temperatureElement.innerHTML - 32)*5)/9;
+    let celsiusTemperature = (temperatureElement.innerHTML - 32)*5/9;
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
   }
 
