@@ -119,6 +119,8 @@ function formatDate(timestamp) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
     celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+
     let celsiusTemperature = (temperatureElement.innerHTML - 32) * 5/9;
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
   }
@@ -126,11 +128,18 @@ function formatDate(timestamp) {
   function displayFahrenheitTemperature (event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
+    fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   }
 
+  let fahrenheitTemperature = null;
+
   let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.addEventListener("submit", handleSubmit);
+  celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
   
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", handleSubmit);
